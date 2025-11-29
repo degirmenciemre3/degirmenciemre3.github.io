@@ -205,52 +205,52 @@
                         <i class="fas fa-trophy"></i> Yarışmalar
                     </h3>
                     <div class="achievement-list">
-                        <div class="achievement-item">
+                        <div class="achievement-item" data-type="competition" data-id="0">
                             <div class="achievement-icon">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="achievement-details">
-                                <h4>Vakıfbank HackToTheFuture - En Global Çözüm Ödülü</h4>
+                                <h4 class="achievement-title">Vakıfbank HackToTheFuture - En Global Çözüm Ödülü</h4>
                                 <p class="achievement-year">2023</p>
                                 <p class="achievement-desc">Vakıfbank'ın düzenlediği hackathon'da en global çözüm ödülü.</p>
                             </div>
                         </div>
-                        <div class="achievement-item">
+                        <div class="achievement-item" data-type="competition" data-id="1">
                             <div class="achievement-icon">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="achievement-details">
-                                <h4>Düzce Teknopark StarTap Fintech - 2. Lik Ödülü</h4>
+                                <h4 class="achievement-title">Düzce Teknopark StarTap Fintech - 2. Lik Ödülü</h4>
                                 <p class="achievement-year">2022</p>
                                 <p class="achievement-desc">Fintech alanında geliştirilen proje ile ikinci oldum.</p>
                             </div>
                         </div>
-                        <div class="achievement-item">
+                        <div class="achievement-item" data-type="competition" data-id="2">
                             <div class="achievement-icon">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="achievement-details">
-                                <h4>Solution Challenge Hack for People & Peace Hackathon - 4. lük Ödülü</h4>
+                                <h4 class="achievement-title">Solution Challenge Hack for People & Peace Hackathon - 4. lük Ödülü</h4>
                                 <p class="achievement-year">2021</p>
                                 <p class="achievement-desc">Google Developer Student Clubs tarafından düzenlenen uluslararası hackathon etkinliği.</p>
                             </div>
                         </div>
-                        <div class="achievement-item">
+                        <div class="achievement-item" data-type="competition" data-id="3">
                             <div class="achievement-icon">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="achievement-details">
-                                <h4>Turkcell #HaCXathonKampüs4 - 2. Lik Ödülü</h4>
+                                <h4 class="achievement-title">Turkcell #HaCXathonKampüs4 - 2. Lik Ödülü</h4>
                                 <p class="achievement-year">2021</p>
                                 <p class="achievement-desc">Turkcell tarafından düzenlenen kampüs hackathon'unda ikinci oldum.</p>
                             </div>
                         </div>
-                        <div class="achievement-item">
+                        <div class="achievement-item" data-type="competition" data-id="4">
                             <div class="achievement-icon">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="achievement-details">
-                                <h4>Düzce Teknopark Girişimcilik Maratonu - Finalist</h4>
+                                <h4 class="achievement-title">Düzce Teknopark Girişimcilik Maratonu - Finalist</h4>
                                 <p class="achievement-year">2021</p>
                                 <p class="achievement-desc">Girişimcilik maratonunda finale kaldım.</p>
                             </div>
@@ -258,18 +258,18 @@
                     </div>
                 </div>
 
-                <!-- Certificates -->
+                <!-- Education -->
                 <div class="achievement-category">
                     <h3 class="achievement-category-title">
-                        <i class="fas fa-certificate"></i> Sertifikalar
+                        <i class="fas fa-graduation-cap"></i> Eğitim
                     </h3>
                     <div class="achievement-list">
-                        <div class="achievement-item">
+                        <div class="achievement-item" data-type="education" data-id="0">
                             <div class="achievement-icon">
                                 <i class="fas fa-check-circle"></i>
                             </div>
                             <div class="achievement-details">
-                                <h4>Düzce Üniversitesi - Bilgisayar Mühendisliği</h4>
+                                <h4 class="achievement-title">Düzce Üniversitesi - Bilgisayar Mühendisliği</h4>
                                 <p class="achievement-year">2019 - 2023</p>
                                 <p class="achievement-desc">Lisans Derecesi, Bilgisayar Mühendisliği mezunu.</p>
                             </div>
@@ -306,15 +306,15 @@
                     </a>
                 </div>
                 
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/xqavrbpe" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Adınız" required>
+                        <input type="text" name="name" placeholder="Adınız" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="E-posta adresiniz" required>
+                        <input type="email" name="email" placeholder="E-posta adresiniz" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Mesajınız" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Mesajınız" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Mesaj Gönder</button>
                 </form>

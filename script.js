@@ -240,7 +240,41 @@ const translations = {
         achievements: {
             title: 'Başarılarım',
             competitions: 'Yarışmalar',
-            certificates: 'Sertifikalar'
+            education: 'Eğitim',
+            competitionList: [
+                {
+                    title: 'Vakıfbank HackToTheFuture - En Global Çözüm Ödülü',
+                    year: '2023',
+                    desc: 'Vakıfbank\'ın düzenlediği hackathon\'da en global çözüm ödülü.'
+                },
+                {
+                    title: 'Düzce Teknopark StarTap Fintech - 2. Lik Ödülü',
+                    year: '2022',
+                    desc: 'Fintech alanında geliştirilen proje ile ikinci oldum.'
+                },
+                {
+                    title: 'Solution Challenge Hack for People & Peace Hackathon - 4. lük Ödülü',
+                    year: '2021',
+                    desc: 'Google Developer Student Clubs tarafından düzenlenen uluslararası hackathon etkinliği.'
+                },
+                {
+                    title: 'Turkcell #HaCXathonKampüs4 - 2. Lik Ödülü',
+                    year: '2021',
+                    desc: 'Turkcell tarafından düzenlenen kampüs hackathon\'unda ikinci oldum.'
+                },
+                {
+                    title: 'Düzce Teknopark Girişimcilik Maratonu - Finalist',
+                    year: '2021',
+                    desc: 'Girişimcilik maratonunda finale kaldım.'
+                }
+            ],
+            educationList: [
+                {
+                    title: 'Düzce Üniversitesi - Bilgisayar Mühendisliği',
+                    year: '2019 - 2023',
+                    desc: 'Lisans Derecesi, Bilgisayar Mühendisliği mezunu.'
+                }
+            ]
         },
         contact: {
             title: 'İletişime Geçin',
@@ -322,7 +356,41 @@ const translations = {
         achievements: {
             title: 'My Achievements',
             competitions: 'Competitions',
-            certificates: 'Certificates'
+            education: 'Education',
+            competitionList: [
+                {
+                    title: 'Vakıfbank HackToTheFuture - Global Solution Award',
+                    year: '2023',
+                    desc: 'Global solution award at the hackathon organized by Vakıfbank.'
+                },
+                {
+                    title: 'Düzce Teknopark StarTap Fintech - 2nd Place',
+                    year: '2022',
+                    desc: 'Second place with the project developed in the Fintech field.'
+                },
+                {
+                    title: 'Solution Challenge Hack for People & Peace Hackathon - 4th Place',
+                    year: '2021',
+                    desc: 'International hackathon event organized by Google Developer Student Clubs.'
+                },
+                {
+                    title: 'Turkcell #HaCXathonKampüs4 - 2nd Place',
+                    year: '2021',
+                    desc: 'Second place in the campus hackathon organized by Turkcell.'
+                },
+                {
+                    title: 'Düzce Teknopark Entrepreneurship Marathon - Finalist',
+                    year: '2021',
+                    desc: 'Finalist in the entrepreneurship marathon.'
+                }
+            ],
+            educationList: [
+                {
+                    title: 'Düzce University - Computer Engineering',
+                    year: '2019 - 2023',
+                    desc: 'Bachelor\'s Degree, Computer Engineering graduate.'
+                }
+            ]
         },
         contact: {
             title: 'Get In Touch',
@@ -450,8 +518,29 @@ function translatePage(lang) {
     const achievementCategories = document.querySelectorAll('.achievement-category-title');
     if (achievementCategories.length >= 2) {
         achievementCategories[0].innerHTML = '<i class="fas fa-trophy"></i> ' + t.achievements.competitions;
-        achievementCategories[1].innerHTML = '<i class="fas fa-certificate"></i> ' + t.achievements.certificates;
+        achievementCategories[1].innerHTML = '<i class="fas fa-graduation-cap"></i> ' + t.achievements.education;
     }
+
+    // Achievements başlıkları ve açıklamalarını güncelle
+    const achievementItems = document.querySelectorAll('.achievement-item');
+    achievementItems.forEach(item => {
+        const type = item.dataset.type;
+        const id = parseInt(item.dataset.id);
+        
+        if (type === 'competition' && t.achievements.competitionList[id]) {
+            const data = t.achievements.competitionList[id];
+            const titleEl = item.querySelector('.achievement-title');
+            const descEl = item.querySelector('.achievement-desc');
+            if (titleEl) titleEl.textContent = data.title;
+            if (descEl) descEl.textContent = data.desc;
+        } else if (type === 'education' && t.achievements.educationList[id]) {
+            const data = t.achievements.educationList[id];
+            const titleEl = item.querySelector('.achievement-title');
+            const descEl = item.querySelector('.achievement-desc');
+            if (titleEl) titleEl.textContent = data.title;
+            if (descEl) descEl.textContent = data.desc;
+        }
+    });
 
     const footerText = document.querySelector('.footer-content p');
     if (footerText) {
@@ -587,22 +676,38 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
+        
         const formData = new FormData(contactForm);
-
-        console.log('Form submitted:', Object.fromEntries(formData));
-
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Mesaj Gönderildi! ✓';
-        submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-
-        contactForm.reset();
-
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = '';
-        }, 3000);
+        
+        // Formspree'ye AJAX isteği gönder
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Başarı mesajı göster
+                submitBtn.textContent = 'Mesaj Gönderildi! ✓';
+                submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                contactForm.reset();
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                }, 3000);
+            } else {
+                alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+            }
+        })
+        .catch(error => {
+            console.error('Form gönderme hatası:', error);
+            alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+        });
     });
 }
 

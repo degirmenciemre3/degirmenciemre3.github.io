@@ -898,6 +898,11 @@ section {
 
 .contact-wrapper {
     margin-top: 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-text {
@@ -977,8 +982,10 @@ section {
     border-radius: 15px;
     display: grid;
     gap: 1rem;
-    max-width: 600px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 [data-theme="light"] .contact-form {
@@ -1000,6 +1007,11 @@ section {
     color: var(--text-primary);
     font-family: inherit;
     transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .form-group input::placeholder,
