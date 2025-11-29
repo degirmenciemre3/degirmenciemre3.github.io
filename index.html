@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emre Degirmenci - Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">ED</a>
+            </div>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Deneyim</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">Başarılarım</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">İletişim</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="word">Merhaba,</span>
+                    <span class="word">Ben</span>
+                    <span class="word">Emre</span>
+                </h1>
+                <p class="hero-subtitle">Senior Software Developer @ Aras Kargo</p>
+                <p class="hero-description">Full Stack Developer | Angular, .NET, Microservices</p>
+                <div class="hero-buttons">
+                    <a href="#experience" class="btn btn-primary">Deneyimlerim</a>
+                    <a href="#contact" class="btn btn-secondary">Bana Ulaş</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="assets/PortfolioPhoto.png" alt="Emre Degirmenci">
+                    <div class="image-glow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Aşağı Kaydır</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Hakkımda</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Merhaba! Ben Emre Değirmenci. Aras Kargo'da Senior Software Developer olarak çalışıyorum.
+                    Düzce Üniversitesi Bilgisayar Mühendisliği mezunuyum (2019-2023, 3.15/4.00).</p>
+
+                    <p>Yaklaşık 2 yıllık profesyonel deneyimle, full-stack geliştirme ve modern yazılım teknolojilerinde
+                    uzmanlaşmış durumdayım. Angular, .NET, Kafka, MongoDB ve Microservice mimarisi ile uluslararası projeler geliştiriyorum.</p>
+
+                    <div class="skills">
+                        <h3>Yeteneklerim</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fab fa-angular"></i>
+                                <span>Angular</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>.NET</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-stream"></i>
+                                <span>Kafka</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cubes"></i>
+                                <span>Microservice</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML/CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Yıl Tecrübe</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Şirket</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Hackathon</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3.15</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Deneyimlerim</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aralık 2024 - Şu an</div>
+                        <h3>Senior Software Developer</h3>
+                        <h4>Aras Kargo - İstanbul, Türkiye</h4>
+                        <p>Yazılım Geliştirici Uzmanı olarak görev yapıyorum. Uluslararası projeler yönetimi.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Temmuz 2023 - Aralık 2024</div>
+                        <h3>Junior Software Developer</h3>
+                        <h4>Aras Kargo - İstanbul, Türkiye</h4>
+                        <p>Macaristan, Slovakya ve Avusturya'daki firmalarla ortak projeler yürüttüm. Mikroservis mimarisi, Kafka ve MongoDB kullanarak backend geliştirmeleri gerçekleştirdim. Angular ile dinamik ve modern frontend uygulamaları tasarladım.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ocak 2023 - Temmuz 2023</div>
+                        <h3>Frontend Web Developer</h3>
+                        <h4>Easymizy - Bursa, Türkiye</h4>
+                        <p>Modern web uygulamaları ve kullanıcı arayüzü geliştirme.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ağustos 2022 - Eylül 2022</div>
+                        <h3>Full-stack Developer</h3>
+                        <h4>TURALI GROUP - Remote</h4>
+                        <p>Uzaktan tam yığın web geliştirme projeleri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Başarılarım</h2>
+            
+            <div class="achievements-wrapper">
+                <!-- Competitions -->
+                <div class="achievement-category">
+                    <h3 class="achievement-category-title">
+                        <i class="fas fa-trophy"></i> Yarışmalar
+                    </h3>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Vakıfbank HackToTheFuture - En Global Çözüm Ödülü</h4>
+                                <p class="achievement-year">2023</p>
+                                <p class="achievement-desc">Vakıfbank'ın düzenlediği hackathon'da en global çözüm ödülü.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Düzce Teknopark StarTap Fintech - 2. Lik Ödülü</h4>
+                                <p class="achievement-year">2022</p>
+                                <p class="achievement-desc">Fintech alanında geliştirilen proje ile ikinci oldum.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Solution Challenge Hack for People & Peace Hackathon - 4. lük Ödülü</h4>
+                                <p class="achievement-year">2021</p>
+                                <p class="achievement-desc">Google Developer Student Clubs tarafından düzenlenen uluslararası hackathon etkinliği.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Turkcell #HaCXathonKampüs4 - 2. Lik Ödülü</h4>
+                                <p class="achievement-year">2021</p>
+                                <p class="achievement-desc">Turkcell tarafından düzenlenen kampüs hackathon'unda ikinci oldum.</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Düzce Teknopark Girişimcilik Maratonu - Finalist</h4>
+                                <p class="achievement-year">2021</p>
+                                <p class="achievement-desc">Girişimcilik maratonunda finale kaldım.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificates -->
+                <div class="achievement-category">
+                    <h3 class="achievement-category-title">
+                        <i class="fas fa-certificate"></i> Sertifikalar
+                    </h3>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="achievement-details">
+                                <h4>Düzce Üniversitesi - Bilgisayar Mühendisliği</h4>
+                                <p class="achievement-year">2019 - 2023</p>
+                                <p class="achievement-desc">Lisans Derecesi, Bilgisayar Mühendisliği mezunu.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">İletişime Geçin</h2>
+            <div class="contact-wrapper">
+                <div class="contact-text">
+                    <p>Heyecan verici projeler hakkında konuşmaya ya da iş birliği yapmaya mı hazırsınız? Bana ulaşmaktan çekinmeyin!</p>
+                </div>
+                <div class="contact-methods">
+                    <a href="https://www.linkedin.com/in/degirmenciemre3" target="_blank" class="contact-card linkedin-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>Beni LinkedIn'de takip edin</p>
+                    </a>
+                    <a href="mailto:degirmenciemre411@gmail.com" class="contact-card email-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>E-Posta</h3>
+                        <p>degirmenciemre411@gmail.com</p>
+                    </a>
+                    <a href="https://github.com/degirmenciemre3" target="_blank" class="contact-card github-card">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                        <p>Benim GitHub profilim</p>
+                    </a>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Adınız" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="E-posta adresiniz" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mesajınız" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Mesaj Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Emre Degirmenci. Tüm hakları saklıdır.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/degirmenciemre3" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/degirmenciemre3" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:degirmenciemre411@gmail.com" title="E-Posta">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
